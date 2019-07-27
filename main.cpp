@@ -1,16 +1,11 @@
-/*
- * Linked Queue
- * By Sreyas Sriram
- */
-
 #include <iostream>
 using namespace std;
 
 struct node
-        {
+{
     node *next;
     int data;
-        };
+};
 
 void insert_into_list(int data, node *&head, node *&tail)
 {
@@ -87,19 +82,19 @@ void priority_delete(int data, node *&head, node *&tail) //Works only if data is
 
 void reverse_list(node *&head, node *&tail)
 {
- node *prev,*upto;
- upto = head;
- prev = nullptr;
- node *temporary;
- tail = head;
- while(upto!= nullptr)
- {
-     temporary = upto->next;
-     upto->next = prev;
-     prev = upto;
-     upto = temporary;
- }
- head = prev;
+    node *prev,*upto;
+    upto = head;
+    prev = nullptr;
+    node *temporary;
+    tail = head;
+    while(upto!= nullptr)
+    {
+   	 temporary = upto->next;
+    	 upto->next = prev;
+    	 prev = upto;
+     	 upto = temporary;
+    }
+    head = prev;
 }
 
 int main() {
@@ -114,32 +109,29 @@ int main() {
         switch(user_input)
         {
             case 1: temp = head;
-            std::cout<<"\n";
-            while(temp != nullptr)
-            {
-                std::cout<<temp->data<<" ";
-                temp = temp->next;
-            }
-                std::cout<<"\n";
-            break;
-            case 2:std::cout<<"Enter data ";
-                cin>>data;
-                insert_into_list(data,head,tail);
-                break;
-            case 3:delete_from_list(head,tail);
-            break;
-            case 4:
-                std::cout<<"Enter data ";
-                cin>>data;
-                priority_delete(data,head,tail);
-                break;
+           	    std::cout<<"\n";
+           	    while(temp != nullptr)
+           	    {
+                	 std::cout<<temp->data<<" ";
+                	 temp = temp->next;
+            	    }
+                    std::cout<<"\n";
+                    break;
+            case 2: std::cout<<"Enter data ";
+                    cin>>data;
+                    insert_into_list(data,head,tail);
+                    break;
+            case 3: delete_from_list(head,tail);
+                    break;
+            case 4: std::cout<<"Enter data ";
+                    cin>>data;
+                    priority_delete(data,head,tail);
+                    break;
             case 5: reverse_list(head,tail);
-                break;
-            case 6:
-                exit(0);
-                break;
-            default:
-                break;
+                    break;
+            case 6: exit(0);
+                    break;
+            default:break;
         }
     }
 

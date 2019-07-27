@@ -1,8 +1,4 @@
-# Coding
-/*
- * Linked Queue
- * By Sreyas Sriram
- */
+Linked Queue
  
- The main file contains quite a lot of variants of linked queue.
- Make, run, practice!
+The main file contains a lot of variants of linked queue.
+Make, run, practice!
